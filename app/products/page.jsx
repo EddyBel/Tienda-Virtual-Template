@@ -38,7 +38,7 @@ export default function ProductListing() {
               className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
             <Input
               type="search"
-              placeholder="Search products..."
+              placeholder="Buscar productos..."
               className="pl-10"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)} />
@@ -50,19 +50,19 @@ export default function ProductListing() {
               variant={filter === "all" ? "default" : "outline"}
               size="sm"
               onClick={() => setFilter("all")}>
-              All
+              Todos
             </Button>
             <Button
               variant={filter === "women" ? "default" : "outline"}
               size="sm"
               onClick={() => setFilter("women")}>
-              Women
+              Mujer
             </Button>
             <Button
               variant={filter === "men" ? "default" : "outline"}
               size="sm"
               onClick={() => setFilter("men")}>
-              Men
+              Hombre
             </Button>
           </div>
         </div>
