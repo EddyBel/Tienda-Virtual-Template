@@ -10,7 +10,7 @@ import { Card } from "@/components/ui/card";
 import { useParams } from "next/navigation";
 import { PRODUCTS } from "../../../constants";
 import { formatMoney } from "@/lib/format";
-import { addCart, getCart, initCart } from "@/lib/cart";
+import { addCart, getCart, initCart, updateFavorite } from "@/lib/cart";
 import Link from "next/link";
 
 export default function ProductPage() {
@@ -31,6 +31,12 @@ export default function ProductPage() {
 
   const updateCart = (product) => {
     addCart(product);
+    const newProduct = getCart()?.[productID];
+    setCurrentProduct(newProduct);
+  };
+
+  const pressFavorite = (product) => {
+    updateFavorite(product);
     const newProduct = getCart()?.[productID];
     setCurrentProduct(newProduct);
   };
@@ -58,7 +64,9 @@ export default function ProductPage() {
     <div className="container mx-auto px-4 py-8 min-h-screen">
       {!currentProduct ? (
         <div className="w-full h-full flex flex-col items-center justify-center">
-          <h1 className="text-3xl font-bold animate-fade-up animate-once">Producto no encontrado</h1>
+          <h1 className="text-3xl font-bold animate-fade-up animate-once">
+            Producto no encontrado
+          </h1>
           <p className="text-muted-foreground delay-100 animate-fade-up animate-once">
             Lo sentimos, no hemos encontrado el producto que estás buscando.
           </p>
@@ -86,7 +94,9 @@ export default function ProductPage() {
             {/* Product Details */}
             <div className="flex flex-col space-y-6">
               <div>
-                <h1 className="text-3xl font-bold animate-fade-up animate-once">{currentProduct?.name}</h1>
+                <h1 className="text-3xl font-bold animate-fade-up animate-once">
+                  {currentProduct?.name}
+                </h1>
                 <div className="flex items-center mt-2 space-x-4 delay-75 animate-fade-up animate-once">
                   <div className="flex items-center">
                     {[...Array(5)].map((_, i) => (
@@ -153,12 +163,14 @@ export default function ProductPage() {
                     : "(" + currentProduct?.quantity + ")"}
                 </Button>
                 <Button
-                  variant="outline active:scale-105"
+                  variant="outline"
                   size="lg"
                   className={
-                    currentProduct?.isFavorite ? "bg-red-500 text-white" : ""
+                    currentProduct?.isFavorite
+                      ? "bg-red-500 text-white active:scale-105"
+                      : "active:scale-105"
                   }
-                  onClick={() => {}}
+                  onClick={() => pressFavorite(currentProduct)}
                 >
                   <Heart className="mr-2 h-5 w-5" />
                   Agregar a favoritos

@@ -7,12 +7,15 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { BANNER_HOME, LOGO, NAME_COMPANY_IMAGE, PRODUCTS } from "../constants";
 import { formatMoney } from "../lib/format";
-import { initCart } from "@/lib/cart";
-import { useEffect } from "react";
+import { getCart, initCart } from "@/lib/cart";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [newProducts, setNewProduct] = useState(null);
+
   useEffect(() => {
     initCart();
+    setNewProduct(getCart());
   }, []);
   return (
     <div className="flex min-h-screen flex-col w-full">
@@ -36,14 +39,18 @@ export default function Home() {
                   height={70}
                   className="m-auto"
                 />
-                <h1 className="text-4xl font-bold mb-4 animate-wiggle">CRAZY SHIRTS UMB</h1>
+                <h1 className="text-4xl font-bold mb-4 animate-wiggle">
+                  CRAZY SHIRTS UMB
+                </h1>
                 <p className="text-lg mb-6">Vistiendo Universitarios</p>
-                <Button
-                  size="lg"
-                  className="bg-white text-black hover:bg-white/90"
-                >
-                  Comprar Ahora
-                </Button>
+                <Link href="/products">
+                  <Button
+                    size="lg"
+                    className="bg-white text-black hover:bg-white/90"
+                  >
+                    Comprar Ahora
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -75,7 +82,15 @@ export default function Home() {
                       size="icon"
                       className="absolute top-2 right-2 bg-white/80 rounded-full h-8 w-8"
                     >
-                      <Heart className="h-4 w-4" />
+                      <Heart
+                        className={"h-4 w-4"}
+                        fill={
+                          newProducts?.[index]?.isFavorite ? "#fb2c36" : "#fff"
+                        }
+                        stroke={
+                          newProducts?.[index]?.isFavorite ? "#fb2c36" : "#000"
+                        }
+                      />
                       {/* <span className="sr-only">Añadir al carrito</span> */}
                     </Button>
                   </div>
@@ -95,8 +110,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      
     </div>
   );
 }

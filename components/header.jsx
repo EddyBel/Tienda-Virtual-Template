@@ -69,20 +69,14 @@ export function Header() {
             />
           </Link>
 
-          {/* <nav className="hidden md:flex items-center gap-6 text-sm">
+          <nav className="hidden md:flex items-center gap-6 text-sm">
             <Link
-              href="#"
+              href="/products"
               className="font-medium transition-colors hover:text-primary"
             >
-              Mujeres
+              Productos
             </Link>
-            <Link
-              href="#"
-              className="font-medium transition-colors hover:text-primary"
-            >
-              Hombres
-            </Link>
-          </nav> */}
+          </nav>
 
           <div className="flex items-center ml-auto gap-4 pr-4">
             <form className="hidden md:flex relative w-full max-w-sm items-center">
@@ -105,13 +99,17 @@ export function Header() {
               <Search className="h-5 w-5" />
               <span className="sr-only">Buscar</span>
             </Button>
-            <Button variant="ghost" size="icon">
-              <Heart className="h-5 w-5" />
-              <span className="sr-only">Favoritos</span>
-            </Button>
-            <Link href="/cart" variant="ghost" size="icon" className="relative">
-              <ShoppingCart className="h-5 w-5" />
-              <span className="sr-only">Carrito</span>
+            <Link href={"/favorites"}>
+              <Button variant="ghost" size="icon">
+                <Heart className="h-5 w-5" />
+                <span className="sr-only">Favoritos</span>
+              </Button>
+            </Link>
+            <Link href="/cart">
+              <Button variant="ghost" size="icon">
+                <ShoppingCart className="h-5 w-5" />
+                <span className="sr-only">Carrito</span>
+              </Button>
             </Link>
           </div>
         </div>

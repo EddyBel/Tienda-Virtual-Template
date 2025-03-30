@@ -49,42 +49,43 @@ export const PRODUCTS = [
     direction: "/products/1",
     reviewCount: 142,
     quantity: 0,
+    isFavorite: false,
   },
   {
     id: 2,
     cover: [PRODUCTO_2.src],
     name: "Playera blanca - Colibrí UMB ARTE",
     price: 100,
-    description:
-      `Demuestra tu orgullo universitario con esta playera blanca oficial de la Universidad Mexiquense (UMB). En el frente, luce el logo de la UMB, símbolo de excelencia académica, y en la parte trasera, un colibrí, la emblemática mascota de la universidad, representando energía, determinación y libertad. Confeccionada con materiales de alta calidad, esta playera unisex ofrece comodidad y estilo, ideal para el día a día o para cualquier ocasión en la que quieras llevar contigo el espíritu de la UMB. Disponible exclusivamente en ${NAME_COMPANY}. ¡Llévala y sé parte del orgullo UMB!
+    description: `Demuestra tu orgullo universitario con esta playera blanca oficial de la Universidad Mexiquense (UMB). En el frente, luce el logo de la UMB, símbolo de excelencia académica, y en la parte trasera, un colibrí, la emblemática mascota de la universidad, representando energía, determinación y libertad. Confeccionada con materiales de alta calidad, esta playera unisex ofrece comodidad y estilo, ideal para el día a día o para cualquier ocasión en la que quieras llevar contigo el espíritu de la UMB. Disponible exclusivamente en ${NAME_COMPANY}. ¡Llévala y sé parte del orgullo UMB!
       `,
     category: ["men", "women"],
     direction: "/products/2",
     reviewCount: 100,
     quantity: 0,
+    isFavorite: false,
   },
   {
     id: 3,
     cover: [PRODUCTO_3],
     name: "Playera blanca - Colibrí UMB",
     price: 100,
-    description:
-      `Lleva contigo el espíritu de la Universidad Mexiquense (UMB) con esta playera blanca unisex, diseñada especialmente para representar orgullo y pertenencia. En el frente, destaca el logo oficial de la UMB, mientras que en la parte trasera se encuentra un diseño exclusivo del colibrí, símbolo de energía, determinación y libertad. Confeccionada con materiales de alta calidad, esta playera es perfecta para el día a día, eventos universitarios o simplemente para demostrar tu identidad como parte de la comunidad UMB. Disponible solo en la tienda ${NAME_COMPANY}. ¡Consigue la tuya y muestra tu orgullo UMB con estilo!`,
+    description: `Lleva contigo el espíritu de la Universidad Mexiquense (UMB) con esta playera blanca unisex, diseñada especialmente para representar orgullo y pertenencia. En el frente, destaca el logo oficial de la UMB, mientras que en la parte trasera se encuentra un diseño exclusivo del colibrí, símbolo de energía, determinación y libertad. Confeccionada con materiales de alta calidad, esta playera es perfecta para el día a día, eventos universitarios o simplemente para demostrar tu identidad como parte de la comunidad UMB. Disponible solo en la tienda ${NAME_COMPANY}. ¡Consigue la tuya y muestra tu orgullo UMB con estilo!`,
     category: ["men", "women"],
     direction: "/products/3",
     reviewCount: 60,
     quantity: 0,
+    isFavorite: false,
   },
   {
     id: 4,
     cover: [PRODUCTO_4],
-    name: "Playera para hombre de flores",
+    name: "Playera blanca - logo UMB",
     price: 100,
-    description:
-      `Luce con orgullo el logo oficial de la Universidad Mexiquense (UMB) con esta playera blanca unisex. Su diseño minimalista y elegante, con el logo en el pecho, la convierte en una prenda versátil y perfecta para cualquier ocasión. Fabricada con materiales de alta calidad, ofrece comodidad y durabilidad, ideal para estudiantes, egresados y todos los que forman parte de la comunidad UMB. Disponible exclusivamente en la tienda ${NAME_COMPANY}. ¡Hazla tuya y representa con orgullo!`,
+    description: `Luce con orgullo el logo oficial de la Universidad Mexiquense (UMB) con esta playera blanca unisex. Su diseño minimalista y elegante, con el logo en el pecho, la convierte en una prenda versátil y perfecta para cualquier ocasión. Fabricada con materiales de alta calidad, ofrece comodidad y durabilidad, ideal para estudiantes, egresados y todos los que forman parte de la comunidad UMB. Disponible exclusivamente en la tienda ${NAME_COMPANY}. ¡Hazla tuya y representa con orgullo!`,
     category: ["men", "women"],
     direction: "/products/4",
     reviewCount: 20,
     quantity: 0,
+    isFavorite: false,
   },
 ];
